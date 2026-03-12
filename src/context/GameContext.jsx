@@ -39,9 +39,40 @@ const [nouvelleRecompense, setNouvelleRecompense]       = useState(null);
 
 const xpNecessaire = 1000 + (niveau * 100); 
 
-useEffect(( => {
+useEffect(() => {
     localStorage.setItem(
-        "wiki_learn_save",
-        JSON.stringify({ xp, niveau, themeSombre, avatarActif, recompensesDebloquees})
+      "wikipedia_learn_save",
+      JSON.stringify({ xp, niveau, themeSombre, avatarActif, recompensesDebloquees })
     );
-}, [xp, niveau, themeSombre, avatarActif, recompensesDebloquees]);)
+}, [xp, niveau, themeSombre, avatarActif, recompensesDebloquees]);
+
+useEffect(() => {
+    document.documentElement.setAttribute("data-theme", themeSombre ? "darkk" : "light");
+}, [themeSombre]);
+
+const verifierRecompenses = (nouveauNiveau) => {
+    const aDebloquer = RECOMPENSES.filter(
+        (r) => r.niveau <= nouveauNiveau && !recompensesDebloquees.include(r.id)
+    );
+    if (aDebloquer.length > 0) {
+        setRecompensesDebloquees((prev) => [...prev, ...aDebloquer.map((r) => r.id)]);
+        setNouvelleRecompense(aDebloquer[aDebloquer.length - 1]);
+        setTimeout (() => setNouvelleRecompense(null), 4000);
+    }
+};
+
+
+// fonction quand bonne reponse pour gagner de l'exp
+const gereBonneReponse = () => {
+    if (niveau >= 100) return;
+    const nouvelXp = xp + 100; 
+    if (nouvelXp >= xpNecessaire) {
+        const nouveauNiveau = niveau + 1;
+        setNiveau(nouveauNiveau);
+        setXp(nouvelXp - xpNecessaire);
+        verifierRecompenses(nouveauNiveau);
+    } else {
+        setXp(nouvelXp);
+    }
+};
+
