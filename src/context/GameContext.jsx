@@ -99,3 +99,12 @@ export function GameProvider({ children }) {
     );
 
 }
+
+
+// hook 
+
+export function useGame() {
+    const context = useContext(GameContext);
+    if(!context) throw new Error ("useGame doit être utilisé dans un <GameProider>");
+    return context;
+}
