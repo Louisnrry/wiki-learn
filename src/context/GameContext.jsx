@@ -18,61 +18,84 @@ export const RECOMPENSES = [
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
+    
+    
     const chargerDepuisStorage = () => {
         try {
             const sauvegarde = localStorage.getItem("wiki_learn_save");
             if (sauvegarde) return JSON.parse(sauvegarde);
         } catch (e) {}
-    }
     return null;
-};
+    };
 
-const sauvegarde = chargerDepuisStorage();
+    const sauvegarde = chargerDepuisStorage();
 
-const [xp, setXp] = useState(sauvegarde?.xp ?? 0);
-const [niveau, setNiveau] = useState(sauvegarde?.niveau ?? 0);
-const [themeSombre, setThemeSombre] = useState(sauvegarde?.themeSombre ?? false);
-const [avatarActif, setAvatarActif] = useState(sauvegarde?.avatarActif ?? "🧑");
-const [recompensesDebloquees, setRecompensesDebloquees] = useState(sauvegarde?.recompensesDebloquees ?? []);
-const [nouvelleRecompense, setNouvelleRecompense]       = useState(null);
+    const [xp, setXp] = useState(sauvegarde?.xp ?? 0);
+    const [niveau, setNiveau] = useState(sauvegarde?.niveau ?? 0);
+    const [themeSombre, setThemeSombre] = useState(sauvegarde?.themeSombre ?? false);
+    const [avatarActif, setAvatarActif] = useState(sauvegarde?.avatarActif ?? "🧑");
+    const [recompensesDebloquees, setRecompensesDebloquees] = useState(sauvegarde?.recompensesDebloquees ?? []);
+    const [nouvelleRecompense, setNouvelleRecompense]       = useState(null);
 
 
-const xpNecessaire = 1000 + (niveau * 100); 
+    const xpNecessaire = 1000 + (niveau * 100); 
 
-useEffect(() => {
-    localStorage.setItem(
-      "wikipedia_learn_save",
-      JSON.stringify({ xp, niveau, themeSombre, avatarActif, recompensesDebloquees })
-    );
-}, [xp, niveau, themeSombre, avatarActif, recompensesDebloquees]);
+    useEffect(() => {
+        localStorage.setItem(
+          "wikipedia_learn_save",
+          JSON.stringify({ xp, niveau, themeSombre, avatarActif, recompensesDebloquees })
+        );
+    }, [xp, niveau, themeSombre, avatarActif, recompensesDebloquees]);
 
-useEffect(() => {
-    document.documentElement.setAttribute("data-theme", themeSombre ? "darkk" : "light");
-}, [themeSombre]);
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", themeSombre ? "darkk" : "light");
+    }, [themeSombre]);
 
-const verifierRecompenses = (nouveauNiveau) => {
-    const aDebloquer = RECOMPENSES.filter(
-        (r) => r.niveau <= nouveauNiveau && !recompensesDebloquees.include(r.id)
-    );
-    if (aDebloquer.length > 0) {
-        setRecompensesDebloquees((prev) => [...prev, ...aDebloquer.map((r) => r.id)]);
-        setNouvelleRecompense(aDebloquer[aDebloquer.length - 1]);
-        setTimeout (() => setNouvelleRecompense(null), 4000);
-    }
-};
+    const verifierRecompenses = (nouveauNiveau) => {
+        const aDebloquer = RECOMPENSES.filter(
+            (r) => r.niveau <= nouveauNiveau && !recompensesDebloquees.includes(r.id)
+        );
+        if (aDebloquer.length > 0) {
+            setRecompensesDebloquees((prev) => [...prev, ...aDebloquer.map((r) => r.id)]);
+            setNouvelleRecompense(aDebloquer[aDebloquer.length - 1]);
+            setTimeout (() => setNouvelleRecompense(null), 4000);
+        }
+    };
 
 
 // fonction quand bonne reponse pour gagner de l'exp
-const gereBonneReponse = () => {
-    if (niveau >= 100) return;
-    const nouvelXp = xp + 100; 
-    if (nouvelXp >= xpNecessaire) {
-        const nouveauNiveau = niveau + 1;
-        setNiveau(nouveauNiveau);
-        setXp(nouvelXp - xpNecessaire);
-        verifierRecompenses(nouveauNiveau);
-    } else {
-        setXp(nouvelXp);
-    }
-};
+    const gereBonneReponse = () => {
+        if (niveau >= 100) return;
+        const nouvelXp = xp + 100; 
+        if (nouvelXp >= xpNecessaire) {
+            const nouveauNiveau = niveau + 1;
+            setNiveau(nouveauNiveau);
+            setXp(nouvelXp - xpNecessaire);
+            verifierRecompenses(nouveauNiveau);
+        } else {
+            setXp(nouvelXp);
+        }
+    };
 
+
+    const estDebloque = (id) =>recompensesDebloquees.includes(id);
+    const peutUtiliserThemeSombre = estDebloque ("theme_sombre");
+    const basculerTheme = () => { if (peutUtiliserThemeSombre) setThemeSombre((prev) => -prev); }; 
+    const changerAvatar = (avatarId) => {
+        const r = RECOMPENSES.find((r) => r.id === avatarId);
+        if (r && estDebloque("theme_sombre")) setAvatarActif(r.emoji);
+    };
+
+    return (
+        <GameContext.Provider value ={{
+            xp, niveau, xpNecessaire,
+            themeSombre, avatarActif,
+            recompensesDebloquees, nouvelleRecompense,
+            gereBonneReponse, basculerTheme, changerAvatar,
+            estDebloque, peutUtiliserThemeSombre,
+        }}>
+            {children}
+        </GameContext.Provider>
+    );
+
+}
