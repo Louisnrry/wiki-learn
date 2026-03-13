@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const RECOMPENSES = [
     { niveau: 1,  type: "badge",  id: "badge_debutant",        nom: "Débutant",          emoji: "🌱", description: "Bienvenue dans l'aventure !" },
     { niveau: 2,  type: "theme",  id: "theme_sombre",          nom: "Thème Sombre",      emoji: "🌙", description: "Le mode nuit est débloqué !" },
@@ -24,8 +25,10 @@ export function GameProvider({ children }) {
         try {
             const sauvegarde = localStorage.getItem("wiki_learn_save");
             if (sauvegarde) return JSON.parse(sauvegarde);
-        } catch (e) {}
-    return null;
+        } catch (_e) {
+            // Ignorer l'erreur de parsing/storage
+        }
+        return null;
     };
 
     const sauvegarde = chargerDepuisStorage();
@@ -111,6 +114,7 @@ export function GameProvider({ children }) {
 
 // hook 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useGame() {
     const context = useContext(GameContext);
     if(!context) throw new Error ("useGame doit être utilisé dans un <GameProider>");

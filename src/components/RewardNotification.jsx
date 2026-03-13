@@ -5,9 +5,10 @@ export default function RewardNotification() {
     const { nouvelleRecompense } = useGame();
     const [recompense, setRecompense] = useState(null);
 
-    useEffect(() => {
-        if (nouvelleRecompense) setRecompense(nouvelleRecompense);
-    }, [nouvelleRecompense]);
+    // Dérivation de l'état (recommandé par React au lieu d'un useEffect)
+    if (nouvelleRecompense && nouvelleRecompense.id !== recompense?.id) {
+        setRecompense(nouvelleRecompense);
+    }
 
     if(!recompense) return null;
 

@@ -1,5 +1,4 @@
-// Landing : bibliothèque magique (étagères, fenêtre, chouette, etc.)
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import './Landing.css';
 
 import OwlSvg from '../../components/componentLanding/OwlSvg/OwlSvg';
@@ -25,7 +24,7 @@ export default function Landing({ onEnter, onOpenProfil }) {
 
     const range = (n) => Array.from({ length: n });
 
-    const leftShelf = useMemo(() => range(7).map((_, row) => {
+    const [leftShelf] = useState(() => range(7).map((_, row) => {
         const books = range(7).map((__, b) => {
             const w = 12 + Math.floor(Math.random() * 6);
             const h = bookHeights[(row * 7 + b) % bookHeights.length];
@@ -33,9 +32,9 @@ export default function Landing({ onEnter, onOpenProfil }) {
             return { w, h, c };
         });
         return { row, books, top: 12.5 * row + 10, browTop: 12.5 * row + 3 };
-    }), []);
+    }));
 
-    const rightShelf = useMemo(() => range(7).map((_, row) => {
+    const [rightShelf] = useState(() => range(7).map((_, row) => {
         const books = range(7).map((__, b) => {
             const w = 12 + Math.floor(Math.random() * 6);
             const h = bookHeights[(row * 7 + b + 3) % bookHeights.length];
@@ -43,9 +42,9 @@ export default function Landing({ onEnter, onOpenProfil }) {
             return { w, h, c };
         });
         return { row, books, top: 12.5 * row + 10, browTop: 12.5 * row + 3 };
-    }), []);
+    }));
 
-    const stars = useMemo(() => range(60).map(() => {
+    const [stars] = useState(() => range(60).map(() => {
         const sz = Math.random() * 2.2 + 0.4;
         return {
             size: sz,
@@ -54,27 +53,27 @@ export default function Landing({ onEnter, onOpenProfil }) {
             duration: (Math.random() * 2 + 1.2).toFixed(2),
             delay: (Math.random() * 3).toFixed(2)
         };
-    }), []);
+    }));
 
-    const trees = useMemo(() => range(6).map((_, t) => {
+    const [trees] = useState(() => range(6).map((_, t) => {
         const tw = 25 + Math.random() * 20;
         const th = 60 + Math.random() * 50;
         return { left: 5 + t * 16, w: tw, h: th };
-    }), []);
+    }));
 
-    const leftStack = useMemo(() => range(4).map(() => ({
+    const [leftStack] = useState(() => range(4).map(() => ({
         w: 50 + Math.floor(Math.random() * 25),
         h: 18 + Math.floor(Math.random() * 14),
         c: bookColors[Math.floor(Math.random() * bookColors.length)],
         angle: (Math.random() * 12 - 6).toFixed(1)
-    })), []);
+    })));
 
-    const midStack = useMemo(() => range(3).map(() => ({
+    const [midStack] = useState(() => range(3).map(() => ({
         w: 50 + Math.floor(Math.random() * 25),
         h: 18 + Math.floor(Math.random() * 14),
         c: bookColors[Math.floor(Math.random() * bookColors.length)],
         angle: (Math.random() * 12 - 6).toFixed(1)
-    })), []);
+    })));
 
     const candlePos = [
         { left: '30%', top: '15%', dur: '4.2s', drift: '6px', dd: '8s' },
@@ -84,15 +83,16 @@ export default function Landing({ onEnter, onOpenProfil }) {
         { left: '22%', top: '20%', dur: '4.8s', drift: '4px', dd: '10s' },
         { left: '76%', top: '18%', dur: '5.2s', drift: '-5px', dd: '8.5s' },
     ];
-    const candles = useMemo(() => candlePos.map(cp => ({
+    
+    const [candles] = useState(() => candlePos.map(cp => ({
         ...cp,
         bodyHeight: 22 + Math.floor(Math.random() * 18),
         waxTrailHeight: 8 + Math.floor(Math.random() * 6)
-    })), []);
+    })));
 
     const sparkColors = ['#ffd700', '#c9a84c', '#8ecae6', '#a8dadc', '#ffd700', '#ffe066'];
 
-    const sparkles = useMemo(() => range(18).map((_, i) => ({
+    const [sparkles] = useState(() => range(18).map((_, i) => ({
         c: sparkColors[i % sparkColors.length],
         s: (8 + Math.random() * 12).toFixed(0) + 'px',
         left: 10 + Math.random() * 80,
@@ -101,9 +101,9 @@ export default function Landing({ onEnter, onOpenProfil }) {
         del: (Math.random() * 8).toFixed(1) + 's',
         x: (Math.random() * 40 - 20).toFixed(0) + 'px',
         y: (Math.random() * 40 - 20).toFixed(0) + 'px'
-    })), []);
+    })));
 
-    const dusts = useMemo(() => range(35).map(() => {
+    const [dusts] = useState(() => range(35).map(() => {
         const sz = (1.5 + Math.random() * 3).toFixed(1);
         const isGold = Math.random() > 0.5;
         const op = (0.15 + Math.random() * 0.4).toFixed(2);
@@ -117,7 +117,7 @@ export default function Landing({ onEnter, onOpenProfil }) {
             dx: (Math.random() * 50 - 25).toFixed(0) + 'px',
             blur: Math.ceil(sz * 2)
         };
-    }), []);
+    }));
 
     return (
         <div className="scene">
