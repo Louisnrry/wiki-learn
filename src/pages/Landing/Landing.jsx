@@ -2,15 +2,15 @@
 import React, { useMemo } from 'react';
 import './Landing.css';
 
-import OwlSvg from '../OwlSvg/OwlSvg';
-import Shelves from '../Shelves/Shelves';
-import Window from '../Window/Window';
-import Chandelier from '../Chandeliers/Chandeliers';
-import Fireplace from '../Fireplace/Fireplace';
-import BookStacks from '../BookStacks/BookStacks';
-import Candles from '../Candles/Candles';
-import Sparkles from '../Sparkles/Sparkles';
-import Snitch from '../Snitch/Snitch';
+import OwlSvg from '../../components/OwlSvg/OwlSvg';
+import Shelves from '../../components/Shelves/Shelves';
+import Window from '../../components/Window/Window';
+import Chandelier from '../../components/Chandeliers/Chandeliers';
+import Fireplace from '../../components/Fireplace/Fireplace';
+import BookStacks from '../../components/BookStacks/BookStacks';
+import Candles from '../../components/Candles/Candles';
+import Sparkles from '../../components/Sparkles/Sparkles';
+import Snitch from '../../components/Snitch/Snitch';
 
 export default function Landing() {
 
