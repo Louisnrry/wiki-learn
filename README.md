@@ -1,17 +1,32 @@
-# React + Vite
+# 🎓 Wikipedia Learn - MVP
+> Transformer la curiosité en savoir structuré et gamifié.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projet réalisé dans le cadre du **Coding Sprint de 48h** à l'école **HETIC**.  
+**Date de rendu :** Vendredi 13 Mars, 17h.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Déploiement
+Le projet est hébergé et accessible en direct ici :  
+👉 **[INSERE TON LIEN NETLIFY ICI]**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📝 Présentation du projet
+**Wikipedia Learn** est une plateforme d'apprentissage qui structure l'immense base de données de Wikipedia. L'objectif est de sortir de la lecture passive pour entrer dans un parcours d'apprentissage engageant.
 
-## Expanding the ESLint configuration
+### Points clés :
+* **Parcours structurés :** Des thématiques découpées en étapes logiques.
+* **Gamification :** Gain d'expérience (XP) et déblocage de badges à chaque étape franchie.
+* **Interface immersive :** Une UX pensée pour la concentration et le plaisir d'apprendre.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# wiki-learn
+---
+
+## 🛠 Stack Technique
+Pour ce MVP, nous avons privilégié la rapidité et la fluidité :
+* **Frontend :** [React.js](https://reactjs.org/) (Vite)
+* **Animations :** [Framer Motion](https://www.framer.com/motion/) / [GSAP](https://greensock.com/gsap/) pour la fluidité de la gamification.
+* **Stylisation :** CSS pur avec méthodologie **BEM** (Block Element Modifier).
+* **Déploiement :** [Netlify](https://www.netlify.com/).
+
+
