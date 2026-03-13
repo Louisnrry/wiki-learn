@@ -13,7 +13,12 @@ export default function App() {
   const theme = "Rome antique";
 
   if (view === "landing") {
-    return <Landing onEnter={() => setView("menu")} />;
+    return (
+      <Landing 
+        onEnter={() => setView("rome")} 
+        onOpenProfil={() => setView("profil")} 
+      />
+    );
   }
 
   return (
@@ -36,28 +41,60 @@ export default function App() {
 
         {/* Affichage conditionnel */}
         <div className="app-rome__content">
-          {view === "menu" ? (
+          {view === "rome" ? (
+            <div style={{ textAlign: "center", color: "#e8d8b0", fontFamily: "Georgia, serif" }}>
+              <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Bienvenue dans la Rome Antique</h2>
+              <p style={{ marginBottom: "2rem", fontStyle: "italic" }}>
+                Découvrez les secrets de l'Empire et testez vos connaissances.
+              </p>
+              <button 
+                onClick={() => setView("menu")}
+                style={{
+                  padding: "0.8rem 2rem",
+                  fontSize: "1.2rem",
+                  background: "linear-gradient(to bottom, #c9a030, #a07d20)",
+                  border: "2px solid #fff",
+                  color: "#fff",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  fontFamily: "Georgia, serif",
+                  boxShadow: "0 4px 15px rgba(201, 160, 48, 0.4)"
+                }}
+              >
+                Ouvrir le Livre
+              </button>
+            </div>
+          ) : view === "menu" ? (
             <LivreConteneur
               onOpenCours={() => setView("cours")}
               onOpenQuiz={() => setView("quiz")}
-              onOpenProfil={() => setView("profil")}
             />
           ) : view === "cours" ? (
             <CoursContent onBack={() => setView("menu")} />
           ) : view === "quiz" ? (
             <QuizRomain onBack={() => setView("menu")} />
           ) : view === "profil" ? (
-            <ProfilPage onBack={() => setView("menu")} />
+            <ProfilPage onBack={() => setView("landing")} />
           ) : null}
         </div>
 
-        {/* Bouton retour vers la bibliothèque */}
-        {view === "menu" && (
+        {/* Bouton retour vers la bibliothèque OU vers le thème */}
+        {(view === "rome" || view === "profil") && (
           <button
             onClick={() => setView("landing")}
             className="app-rome__btn-retour"
           >
             ← Retourner à la bibliothèque
+          </button>
+        )}
+        
+        {/* Depuis le menu, on retourne d'abord à la sélection du thème */}
+        {view === "menu" && (
+          <button
+            onClick={() => setView("rome")}
+            className="app-rome__btn-retour"
+          >
+            ← Retourner au Thème
           </button>
         )}
 

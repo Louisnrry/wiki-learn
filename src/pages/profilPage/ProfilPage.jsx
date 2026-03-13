@@ -27,7 +27,7 @@ export default function ProfilPage({ onBack }) {
       <div className="profil__inner">
         {onBack && (
           <button onClick={onBack} className="profil__btn-retour">
-            ← Retour au menu
+            ← Retour à la bibliothèque
           </button>
         )}
         <ProfilHeader

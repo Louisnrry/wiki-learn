@@ -12,7 +12,7 @@ import Candles from '../../components/componentLanding/Candles/Candles';
 import Sparkles from '../../components/componentLanding/Sparkles/Sparkles';
 import Snitch from '../../components/componentLanding/Snitch/Snitch';
 
-export default function Landing({ onEnter }) {
+export default function Landing({ onEnter, onOpenProfil }) {
 
     const bookColors = [
         '#6b1c1c', '#1c3a6b', '#1c6b2a', '#6b5a1c', '#4a1c6b',
@@ -132,12 +132,27 @@ export default function Landing({ onEnter }) {
                 <span className="crest-sub">Bibliothèque du Savoir</span>
                 
                 {onEnter && (
-                    <button 
-                        onClick={onEnter}
-                        className="landing__enter-btn"
-                    >
-                        Entrez dans l'Histoire
-                    </button>
+                    <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+                        <button 
+                            onClick={onEnter}
+                            className="landing__enter-btn"
+                        >
+                            Entrez dans l'Histoire
+                        </button>
+                        {onOpenProfil && (
+                            <button 
+                                onClick={onOpenProfil}
+                                className="landing__enter-btn"
+                                style={{ 
+                                    background: 'rgba(50, 20, 10, 0.8)', 
+                                    color: '#e8d8b0', 
+                                    border: '1px solid #c9a84c' 
+                                }}
+                            >
+                                Mon Profil
+                            </button>
+                        )}
+                    </div>
                 )}
             </div>
 
