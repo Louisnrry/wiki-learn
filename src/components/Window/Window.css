@@ -1,15 +1,18 @@
 /* Window.css */
 
+/* Animation de scintillement des étoiles */
 @keyframes twinkle {
     from { opacity: 0.2; transform: scale(0.8); }
     to   { opacity: 1;   transform: scale(1.2); }
 }
 
+/* Animation d'une étoile filante */
 @keyframes shootingStar {
     0%   { transform: translate(0,0); opacity: 1; }
     100% { transform: translate(120px,60px); opacity: 0; }
 }
 
+/* Zone de la fenêtre : positionnement centré */
 .window-area {
     position: absolute;
     top: 8%;
@@ -20,6 +23,7 @@
     z-index: 4;
 }
 
+/* Encadrement en pierre de la fenêtre */
 .window-stone {
     position: absolute;
     inset: -6px;
@@ -28,6 +32,7 @@
     box-shadow: inset 0 0 20px rgba(0,0,0,.6), 0 6px 20px rgba(0,0,0,.6);
 }
 
+/* Vitre de la fenêtre : conteneur pour le ciel */
 .window-glass {
     position: absolute;
     inset: 0;
@@ -36,12 +41,14 @@
     background: #05080f;
 }
 
+/* Ciel nocturne : dégradé bleu sombre */
 .sky-bg {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, #03060f 0%, #080d20 50%, #101828 100%);
 }
 
+/* Lune : cercle avec dégradé radial et craters légers */
 .moon {
     position: absolute;
     top: 8%;
@@ -53,6 +60,7 @@
     box-shadow: inset -4px -2px 8px rgba(0,0,0,.2), 0 0 20px rgba(220,220,180,.4), 0 0 50px rgba(180,180,140,.15);
 }
 
+/* Étoile filante (utilisée avec l'animation shootingStar) */
 .shoot {
     position: absolute;
     top: 20%;
@@ -65,6 +73,7 @@
     animation: shootingStar 6s ease-in-out 3s infinite;
 }
 
+/* Barre horizontale de l'encadrement en bois */
 .win-bar-h {
     position: absolute;
     top: 50%;
@@ -75,6 +84,7 @@
     z-index: 2;
 }
 
+/* Barre verticale de l'encadrement en bois */
 .win-bar-v {
     position: absolute;
     left: 50%;
@@ -85,11 +95,13 @@
     z-index: 2;
 }
 
+/* Silhouette d'arbre (forme triangulaire sombre) */
 .tree {
     position: absolute;
     bottom: 0;
 }
 
+/* Halo lumineux bleuté à l'intérieur de la pièce près de la fenêtre */
 .window-glow {
     position: absolute;
     bottom: -30%;
