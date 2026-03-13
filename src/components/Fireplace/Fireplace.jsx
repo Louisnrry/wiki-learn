@@ -1,4 +1,4 @@
-// Cheminée avec flammes animées, étincelles et globe décoratif
+// Cheminée : flammes, étincelles et globe
 import React from 'react';
 import './Fireplace.css';
 
