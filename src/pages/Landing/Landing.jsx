@@ -2,15 +2,15 @@
 import React, { useMemo } from 'react';
 import './Landing.css';
 
-import OwlSvg from '../../components/OwlSvg/OwlSvg';
-import Shelves from '../../components/Shelves/Shelves';
-import Window from '../../components/Window/Window';
-import Chandelier from '../../components/Chandeliers/Chandeliers';
-import Fireplace from '../../components/Fireplace/Fireplace';
-import BookStacks from '../../components/BookStacks/BookStacks';
-import Candles from '../../components/Candles/Candles';
-import Sparkles from '../../components/Sparkles/Sparkles';
-import Snitch from '../../components/Snitch/Snitch';
+import OwlSvg from '../../components/componentLanding/OwlSvg/OwlSvg';
+import Shelves from '../../components/componentLanding/Shelves/Shelves';
+import Window from '../../components/componentLanding/Window/Window';
+import Chandelier from '../../components/componentLanding/Chandeliers/Chandeliers';
+import Fireplace from '../../components/componentLanding/Fireplace/Fireplace';
+import BookStacks from '../../components/componentLanding/BookStacks/BookStacks';
+import Candles from '../../components/componentLanding/Candles/Candles';
+import Sparkles from '../../components/componentLanding/Sparkles/Sparkles';
+import Snitch from '../../components/componentLanding/Snitch/Snitch';
 
 export default function Landing() {
 

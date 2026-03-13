@@ -1,0 +1,14 @@
+/* ── Grille récompenses ── */
+.profil__grille-wrapper {
+  background: var(--carte);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px var(--ombre);
+  border: 1px solid var(--bordure);
+}
+
+.profil__grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}

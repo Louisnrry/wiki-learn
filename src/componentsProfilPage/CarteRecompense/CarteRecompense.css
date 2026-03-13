@@ -1,0 +1,62 @@
+/* ── Carte récompense ── */
+.profil__carte {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.2s;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.profil__carte--verrouillee {
+  opacity: 0.4;
+  filter: grayscale(1);
+  border-color: transparent;
+  background: var(--bg-2);
+}
+
+.profil__carte--active {
+  border: 2px solid #ffd700;
+  transform: scale(1.05);
+}
+
+.profil__carte-cadenas {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  font-size: 0.7rem;
+}
+
+.profil__carte-coche {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  font-size: 0.6rem;
+  background: #ffd700;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profil__carte-emoji {
+  font-size: 2rem;
+}
+
+.profil__carte-nom {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--texte);
+}
+
+.profil__carte-niveau {
+  font-size: 0.65rem;
+  color: var(--texte-2);
+}

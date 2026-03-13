@@ -1,0 +1,36 @@
+/* ── Variables thème clair / sombre ── */
+:root,
+[data-theme="light"] {
+  --bg:       #f0f4ff;
+  --bg-2:     #e2e8f0;
+  --carte:    #ffffff;
+  --texte:    #1a1a2e;
+  --texte-2:  #64748b;
+  --bordure:  #cbd5e1;
+  --ombre:    rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg:       #0d1117;
+  --bg-2:     #161b22;
+  --carte:    #1c2128;
+  --texte:    #e6edf3;
+  --texte-2:  #8b949e;
+  --bordure:  #30363d;
+  --ombre:    rgba(0, 0, 0, 0.4);
+}
+
+/* ── Layout page ── */
+.profil {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--texte);
+  padding: 2rem 1rem;
+  transition: background 0.3s, color 0.3s;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.profil__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}

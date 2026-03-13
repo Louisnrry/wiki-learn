@@ -1,0 +1,78 @@
+/* ── Carte en-tête ── */
+.profil__header {
+  background: var(--carte);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 24px var(--ombre);
+  border: 1px solid var(--bordure);
+}
+
+.profil__header-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profil__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #4f8ef7, #a78bfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 16px rgba(79, 142, 247, 0.3);
+}
+
+.profil__infos {
+  flex: 1;
+}
+
+.profil__nom {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.profil__badge-niveau {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #4f8ef7, #a78bfa);
+  color: white;
+  border-radius: 99px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.profil__bouton-theme {
+  background: var(--bg-2);
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  transition: all 0.2s;
+}
+
+.profil__bouton-theme--actif {
+  cursor: pointer;
+}
+
+.profil__bouton-theme--bloque {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.profil__bouton-theme span {
+  font-size: 0.5rem;
+  color: var(--texte-2);
+}
