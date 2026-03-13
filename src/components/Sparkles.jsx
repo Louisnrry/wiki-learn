@@ -1,10 +1,8 @@
 import React from 'react';
 
-// Composant : Les éclats de lumière magiques et les particules de poussière
 export default function Sparkles({ sparkles, dusts }) {
     return (
         <>
-            {/* ── ÉCLATS DE LUMIÈRE MAGIQUES ── */}
             <div id="sparkles">
                 {sparkles.map((sp, i) => (
                     <div key={i} className="sparkle" style={{
@@ -15,7 +13,6 @@ export default function Sparkles({ sparkles, dusts }) {
                 ))}
             </div>
 
-            {/* ── PARTICULES DE POUSSIÈRE FLOTTANTES ── */}
             <div id="dustParticles">
                 {dusts.map((d, i) => (
                     <div key={i} className="dust" style={{

@@ -1,10 +1,8 @@
 import React from 'react';
 
-// Composant : Les étagères gauche et droite avec leurs livres
 export default function Shelves({ leftShelf, rightShelf }) {
     return (
         <>
-            {/* ── ÉTAGÈRE GAUCHE ── */}
             <div className="shelf shelf-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                 {leftShelf.map(row => (
                     <React.Fragment key={`l-${row.row}`}>
@@ -18,7 +16,6 @@ export default function Shelves({ leftShelf, rightShelf }) {
                 ))}
             </div>
 
-            {/* ── ÉTAGÈRE DROITE ── */}
             <div className="shelf shelf-right" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                 {rightShelf.map(row => (
                     <React.Fragment key={`r-${row.row}`}>

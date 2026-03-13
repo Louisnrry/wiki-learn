@@ -1,23 +1,16 @@
 import React from 'react';
 
-// Composant : La fenêtre avec la vue nocturne (ciel, lune, étoiles, arbres)
 export default function Window({ stars, trees }) {
     return (
         <div className="window-area">
-            {/* Encadrement en pierre */}
             <div className="window-stone"></div>
             <div className="window-glass">
-                {/* Ciel nocturne */}
                 <div className="sky-bg"></div>
-                {/* La lune */}
                 <div className="moon"></div>
-                {/* Étoile filante */}
                 <div className="shoot"></div>
-                {/* Croisillons de fenêtre */}
                 <div className="win-bar-h"></div>
                 <div className="win-bar-v"></div>
 
-                {/* Étoiles scintillantes */}
                 {stars.map((s, i) => (
                     <div key={`star-${i}`} style={{
                         position: 'absolute', borderRadius: '50%', background: 'white',
@@ -28,7 +21,6 @@ export default function Window({ stars, trees }) {
                     }}></div>
                 ))}
 
-                {/* Silhouettes d'arbres (sapins triangulaires) */}
                 {trees.map((t, i) => (
                     <div key={`tree-${i}`} className="tree" style={{
                         left: `${t.left}%`, width: `${t.w}px`, height: `${t.h}px`,
@@ -37,7 +29,6 @@ export default function Window({ stars, trees }) {
                     }}></div>
                 ))}
             </div>
-            {/* Lueur bleutée de la fenêtre sur la pièce */}
             <div className="window-glow"></div>
         </div>
     );
