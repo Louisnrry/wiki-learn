@@ -46,7 +46,7 @@ const QuizRomain = ({ onBack }) => {
       </div>
 
       <form id="quiz-romain" onSubmit={handleSubmit}>
-        <h1>Selectionnez la bonne réponse, Citoyen !</h1>
+        {score === null && <h1>Selectionnez la bonne réponse, Citoyen !</h1>}
 
         {score !== null && (
           <div className="result-banner">
