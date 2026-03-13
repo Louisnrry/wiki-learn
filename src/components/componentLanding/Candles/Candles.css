@@ -1,5 +1,6 @@
 /* Candles.css */
 
+/* Animation de vacillement de la flamme */
 @keyframes flicker {
     0%,100% { opacity: 1; transform: scaleY(1) scaleX(1); }
     20%     { opacity: 0.9; transform: scaleY(1.05) scaleX(0.95); }
@@ -7,16 +8,19 @@
     70%     { opacity: 1; transform: scaleY(1.08) scaleX(0.97); }
 }
 
+/* Animation de flottaison verticale (haut/bas) */
 @keyframes candleFloat {
     0%,100% { transform: translateY(0) rotate(0deg); }
     50%     { transform: translateY(-10px) rotate(2deg); }
 }
 
+/* Animation de dérive horizontale légère */
 @keyframes candleDrift {
     0%,100% { transform: translateX(0); }
     50%     { transform: translateX(var(--dm, 6px)); }
 }
 
+/* Conteneur global de toutes les bougies flottantes */
 #candles {
     position: absolute;
     inset: 0;
@@ -24,6 +28,7 @@
     z-index: 12;
 }
 
+/* Élément bougie : combine flottaison et dérive */
 .candle-float {
     position: absolute;
     display: flex;
@@ -34,6 +39,7 @@
         candleDrift var(--cd, 8s) ease-in-out infinite;
 }
 
+/* Halo lumineux autour de la flamme */
 .candle-glow {
     position: absolute;
     top: -20px;
@@ -44,6 +50,7 @@
     pointer-events: none;
 }
 
+/* Flamme de la bougie (gradient radial blanc/jaune/orange) */
 .candle-flame {
     width: 8px;
     height: 16px;
@@ -54,6 +61,7 @@
     z-index: 1;
 }
 
+/* Mèche de la bougie */
 .candle-wick {
     width: 2px;
     height: 6px;
@@ -61,6 +69,7 @@
     border-radius: 1px;
 }
 
+/* Corps en cire de la bougie */
 .candle-body {
     width: 10px;
     background: linear-gradient(180deg, #f0ece0 0%, #d8d4c8 50%, #c0bca8 100%);
@@ -69,6 +78,7 @@
     box-shadow: inset -2px 0 4px rgba(0,0,0,.15);
 }
 
+/* Coulure de cire le long du corps */
 .wax-trail {
     position: absolute;
     top: 0;
@@ -79,6 +89,7 @@
     border-radius: 0 0 3px 3px;
 }
 
+/* Goutte de cire au bas de la bougie */
 .candle-drip {
     width: 6px;
     height: 8px;

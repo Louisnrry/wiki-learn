@@ -1,5 +1,6 @@
 /* Chandeliers.css */
 
+/* Animation de scintillement des ampoules */
 @keyframes bulbFlicker {
     0%,100% { opacity: 1; }
     40%     { opacity: 0.75; }
@@ -7,6 +8,7 @@
     80%     { opacity: 0.6; }
 }
 
+/* Structure globale du lustre suspendu */
 .chandelier {
     position: absolute;
     top: 7%;
@@ -15,6 +17,7 @@
     z-index: 10;
 }
 
+/* Tige de suspension du lustre */
 .c-rod {
     width: 4px;
     height: 30px;
@@ -23,6 +26,7 @@
     border-radius: 2px;
 }
 
+/* Corps horizontal principal du lustre */
 .c-body {
     position: relative;
     width: 180px;
@@ -33,6 +37,7 @@
     border: 1px solid #5a3820;
 }
 
+/* Bras de support pour chaque ampoule */
 .c-arm {
     position: absolute;
     bottom: 0;
@@ -40,6 +45,7 @@
     border-radius: 2px;
 }
 
+/* Douille de l'ampoule */
 .c-socket {
     position: absolute;
     bottom: -8px;
@@ -49,6 +55,7 @@
     border-radius: 2px 2px 0 0;
 }
 
+/* Ampoule clignotante avec halo lumineux */
 .c-bulb {
     position: absolute;
     bottom: -22px;

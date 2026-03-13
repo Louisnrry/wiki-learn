@@ -1,5 +1,6 @@
 /* BookStacks.css */
 
+/* Conteneur pour une pile de livres au sol */
 .book-stack {
     position: absolute;
     display: flex;
@@ -8,6 +9,7 @@
     z-index: 5;
 }
 
+/* Livre individuel au sein d'une pile */
 .stacked-book {
     border-radius: 2px 3px 3px 2px;
     box-shadow: 2px 2px 6px rgba(0,0,0,.5), inset -2px 0 4px rgba(0,0,0,.3);

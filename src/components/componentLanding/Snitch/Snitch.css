@@ -1,5 +1,6 @@
 /* Snitch.css */
 
+/* Animation de vol aléatoire du Vif d'Or */
 @keyframes snitchFly {
     0%   { transform: translate(0, 0) rotate(0deg); }
     25%  { transform: translate(60px, -30px) rotate(15deg); }
@@ -8,11 +9,13 @@
     100% { transform: translate(0, 0) rotate(0deg); }
 }
 
+/* Animation rapide du battement des ailes */
 @keyframes wingFlap {
     0%,100% { transform: scaleX(1) skewY(0deg); }
     50%     { transform: scaleX(0.5) skewY(15deg); }
 }
 
+/* Conteneur principal du Vif d'Or */
 .snitch {
     position: absolute;
     top: 30%;
@@ -21,6 +24,7 @@
     animation: snitchFly 10s ease-in-out infinite;
 }
 
+/* Corps sphérique doré du Vif d'Or */
 .snitch-ball {
     position: absolute;
     top: 0; left: 0;
@@ -32,6 +36,7 @@
     z-index: 1;
 }
 
+/* Ailes translucides et animées du Vif d'Or */
 .snitch-wing {
     position: absolute;
     top: 3px;
@@ -43,5 +48,6 @@
     animation: wingFlap 0.2s ease-in-out infinite;
 }
 
+/* Positionnement et orientation des ailes (gauche/droite) */
 .snitch-wing.left  { right: 12px; transform-origin: right center; }
 .snitch-wing.right { left: 12px; transform-origin: left center; }

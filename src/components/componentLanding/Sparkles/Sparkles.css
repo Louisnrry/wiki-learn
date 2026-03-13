@@ -1,5 +1,6 @@
 /* Sparkles.css */
 
+/* Animation des éclats magiques : apparition, mouvement et disparition */
 @keyframes sparkleAnim {
     0%,100% { transform: translate(0,0) scale(0); opacity: 0; }
     20%     { opacity: 1; }
@@ -7,12 +8,14 @@
     80%     { opacity: 0.4; }
 }
 
+/* Animation de la poussière flottante : monte lentement en dérivant */
 @keyframes dustFloat {
     0%   { transform: translateY(0) translateX(0); opacity: var(--dop, 0.3); }
     50%  { transform: translateY(-60px) translateX(var(--dx)); opacity: calc(var(--dop, 0.3) * 1.4); }
     100% { transform: translateY(-120px) translateX(0); opacity: 0; }
 }
 
+/* Conteneur global des éclats magiques */
 #sparkles {
     position: absolute;
     inset: 0;
@@ -20,6 +23,7 @@
     z-index: 11;
 }
 
+/* Élément éclat individuel (forme étoilée via clip-path) */
 .sparkle {
     position: absolute;
     width: var(--sp-s, 10px);
@@ -30,6 +34,7 @@
     filter: blur(0.5px);
 }
 
+/* Conteneur global des particules de poussière */
 #dustParticles {
     position: absolute;
     inset: 0;
@@ -37,6 +42,7 @@
     z-index: 11;
 }
 
+/* Particule de poussière individuelle (petit point flou) */
 .dust {
     position: absolute;
     border-radius: 50%;

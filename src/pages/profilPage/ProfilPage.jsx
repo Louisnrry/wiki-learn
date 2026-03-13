@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useGame, RECOMPENSES } from "../../context/GameContext";
 
 // Import des composants depuis componentsProfilPage
-import ProfilHeader from "../../componentsProfilPage/ProfilHeader/ProfilHeader";
-import OngletsProfil from "../../componentsProfilPage/OngletsProfil/OngletsProfil";
-import GrilleRecompenses from "../../componentsProfilPage/GrilleRecompenses/GrilleRecompenses";
+import ProfilHeader from "../../components/componentsProfilPage/ProfilHeader/ProfilHeader";
+import OngletsProfil from "../../components/componentsProfilPage/OngletsProfil/OngletsProfil";
+import GrilleRecompenses from "../../components/componentsProfilPage/GrilleRecompenses/GrilleRecompenses";
 
 // Import du CSS de la page (variables + layout uniquement)
 import "./ProfilPage.css";

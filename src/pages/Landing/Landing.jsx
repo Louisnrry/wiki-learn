@@ -12,7 +12,7 @@ import Candles from '../../components/componentLanding/Candles/Candles';
 import Sparkles from '../../components/componentLanding/Sparkles/Sparkles';
 import Snitch from '../../components/componentLanding/Snitch/Snitch';
 
-export default function Landing() {
+export default function Landing({ onEnter }) {
 
     const bookColors = [
         '#6b1c1c', '#1c3a6b', '#1c6b2a', '#6b5a1c', '#4a1c6b',
@@ -130,6 +130,15 @@ export default function Landing() {
             <div className="title-crest">
                 <span className="crest-text">Wiki-Learn</span>
                 <span className="crest-sub">Bibliothèque du Savoir</span>
+                
+                {onEnter && (
+                    <button 
+                        onClick={onEnter}
+                        className="mt-6 px-8 py-3 bg-[#c9a030] text-[#110a04] font-serif font-bold text-lg rounded-sm shadow-[0_0_20px_rgba(201,160,48,0.4)] hover:bg-[#ffe066] hover:scale-105 transition-all cursor-pointer z-50"
+                    >
+                        Entrez dans l'Histoire
+                    </button>
+                )}
             </div>
 
             <Shelves leftShelf={leftShelf} rightShelf={rightShelf} />
