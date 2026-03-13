@@ -1,0 +1,70 @@
+/* quizz.css */
+
+.quiz-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #e8d8b0;
+    font-family: 'Georgia', serif;
+}
+
+#quiz-romain h1 {
+    color: #c9a84c;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+fieldset {
+    border: 1px solid #c9a84c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: rgba(42, 26, 14, 0.4);
+}
+
+legend {
+    color: #c9a84c;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+label:hover {
+    color: #fff;
+}
+
+.result-banner {
+    background: rgba(201, 168, 76, 0.15);
+    border: 2px solid #c9a030;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.container-validation {
+    text-align: center;
+}
+
+button[type="submit"] {
+    background: #c9a84c;
+    color: #110a04;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #ffe066;
+    transform: scale(1.05);
+}
