@@ -63,18 +63,26 @@ export function GameProvider({ children }) {
     };
 
 
-// fonction quand bonne reponse pour gagner de l'exp
-    const gererBonneReponse = () => {
-        if (niveau >= 100) return;
-        const nouvelXp = xp + 100; 
-        if (nouvelXp >= xpNecessaire) {
-            const nouveauNiveau = niveau + 1;
-            setNiveau(nouveauNiveau);
-            setXp(nouvelXp - xpNecessaire);
-            verifierRecompenses(nouveauNiveau);
-        } else {
-            setXp(nouvelXp);
+// fonction quand bonne reponse(s) pour gagner de l'exp
+    const gererBonneReponse = (nbBonnesReponses = 1) => {
+        if (niveau >= 100 || nbBonnesReponses <= 0) return;
+        
+        let currentXp = xp + (100 * nbBonnesReponses);
+        let currentNiveau = niveau;
+        let currentXpNecessaire = 1000 + (currentNiveau * 100);
+
+        // Gérer les montées de niveau multiples potentielles
+        while (currentXp >= currentXpNecessaire && currentNiveau < 100) {
+            currentXp -= currentXpNecessaire;
+            currentNiveau++;
+            currentXpNecessaire = 1000 + (currentNiveau * 100);
         }
+
+        if (currentNiveau > niveau) {
+            setNiveau(currentNiveau);
+            verifierRecompenses(currentNiveau);
+        }
+        setXp(currentXp);
     };
 
 

@@ -20,9 +20,12 @@ const QuizRomain = ({ onBack }) => {
     questions.forEach((q) => {
       if (answers[q.id] === q.correctAnswer) {
         tempScore++;
-        gererBonneReponse(); // +XP pour chaque bonne réponse
       }
     });
+    
+    if (tempScore > 0) {
+        gererBonneReponse(tempScore); // Donne 100 XP par bonne réponse
+    }
     
     setScore(tempScore);
     window.scrollTo(0, 0); // Remonte en haut pour voir le score
