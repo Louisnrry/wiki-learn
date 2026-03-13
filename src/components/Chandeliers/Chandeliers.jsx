@@ -1,4 +1,4 @@
-// Lustre suspendu au plafond avec 5 ampoules clignotantes
+// Lustre : ampoules clignotantes
 import React from 'react';
 import './Chandeliers.css';
 
