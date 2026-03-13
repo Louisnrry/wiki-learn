@@ -1,0 +1,64 @@
+/* ── LivreConteneur ── */
+.livre {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  aspect-ratio: 16 / 10;
+  background: #f5e6c8;
+  border: 12px solid #7a3515;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-radius: 40px;
+  display: flex;
+  overflow: hidden;
+}
+
+.livre__page {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.livre__page--gauche {
+  border-right: 2px solid rgba(122, 53, 21, 0.2);
+}
+
+.livre__separateur {
+  width: 3rem;
+  height: 4px;
+  background: #c9a030;
+  margin-bottom: 1rem;
+  border-radius: 99px;
+  opacity: 0.6;
+}
+
+.livre__titre {
+  font-size: 1.875rem;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #3a1505;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.livre__description {
+  color: #7a3515;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.livre__reliure {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  bottom: 1rem;
+  width: 4px;
+  background: rgba(122, 53, 21, 0.1);
+  border-radius: 99px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -75,3 +75,27 @@ button[type="submit"]:hover {
     background: #ffe066;
     transform: scale(1.05);
 }
+
+/* ── Boutons navigation quiz ── */
+.quiz-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.quiz-btn-nav {
+    padding: 0.5rem 1rem;
+    color: #fdf5e6;
+    background: #3e2723;
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    border: 1px solid #5d4037;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quiz-btn-nav:hover {
+    background: #5d4037;
+}
+

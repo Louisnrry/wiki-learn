@@ -1,0 +1,63 @@
+/* ── CoursContent ── */
+.cours {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  background: #fdf5e6;
+  border: 12px solid #5d4037;
+  padding: 3rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+}
+
+.cours__btn-retour {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  color: #fdf5e6;
+  background: #3e2723;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  border: 1px solid #5d4037;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cours__btn-retour:hover {
+  background: #5d4037;
+}
+
+.cours__titre {
+  font-size: 2.25rem;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #3e2723;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(139, 90, 43, 0.3);
+  padding-bottom: 1rem;
+}
+
+.cours__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: auto;
+  max-height: 60vh;
+  padding-right: 1rem;
+}
+
+.cours__section-titre {
+  font-size: 1.5rem;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #8b5a2b;
+  margin-bottom: 0.75rem;
+}
+
+.cours__section-contenu {
+  color: #3e2723;
+  font-family: 'Georgia', serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  font-style: italic;
+}

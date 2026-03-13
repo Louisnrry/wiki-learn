@@ -1,0 +1,40 @@
+/* ── LivreButton ── */
+.livre-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 99px;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  transition: all 0.2s;
+  transform: scale(1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.livre-btn:hover {
+  transform: scale(1.05);
+}
+
+.livre-btn:active {
+  transform: scale(0.95);
+}
+
+/* Variante primaire : fond marron foncé, texte doré */
+.livre-btn--primary {
+  background: #3a1505;
+  color: #f5e6c8;
+  border: 2px solid #c9a030;
+}
+
+/* Variante secondaire : contour marron, fond clair */
+.livre-btn--secondary {
+  background: transparent;
+  color: #3a1505;
+  border: 2px solid #3a1505;
+}
+
+.livre-btn--secondary:hover {
+  background: #3a1505;
+  color: #f5e6c8;
+}

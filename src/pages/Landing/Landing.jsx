@@ -134,7 +134,7 @@ export default function Landing({ onEnter }) {
                 {onEnter && (
                     <button 
                         onClick={onEnter}
-                        className="mt-6 px-8 py-3 bg-[#c9a030] text-[#110a04] font-serif font-bold text-lg rounded-sm shadow-[0_0_20px_rgba(201,160,48,0.4)] hover:bg-[#ffe066] hover:scale-105 transition-all cursor-pointer z-50"
+                        className="landing__enter-btn"
                     >
                         Entrez dans l'Histoire
                     </button>

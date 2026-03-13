@@ -1,0 +1,113 @@
+/* ── App : page Rome Antique ── */
+
+.app-rome {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #1a0b05;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 1. Lueur magique arrière-plan */
+.app-rome__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: #c9a030;
+  opacity: 0.07;
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 2. Overlay dégradé */
+.app-rome__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent, #1a0b05);
+}
+
+/* 3. Contenu principal */
+.app-rome__main {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 2.5rem;
+}
+
+.app-rome__header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.app-rome__header-line {
+  height: 4px;
+  width: 8rem;
+  background: rgba(201, 160, 48, 0.4);
+  margin: 0.5rem auto 0;
+  border-radius: 99px;
+}
+
+.app-rome__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+/* Bouton retour bibliothèque */
+.app-rome__btn-retour {
+  margin-top: 2rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(201, 160, 48, 0.3);
+  background: none;
+  color: rgba(201, 160, 48, 0.6);
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.app-rome__btn-retour:hover {
+  color: #c9a030;
+  border-color: #c9a030;
+}
+
+/* 4. Éléments décoratifs */
+.app-rome__dot {
+  position: absolute;
+  background: #c9a030;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.app-rome__dot--bottom {
+  bottom: 2.5rem;
+  left: 2.5rem;
+  width: 8px;
+  height: 8px;
+  filter: blur(2px);
+  opacity: 0.2;
+}
+
+.app-rome__dot--top {
+  top: 5rem;
+  right: 5rem;
+  width: 12px;
+  height: 12px;
+  filter: blur(4px);
+  opacity: 0.1;
+}

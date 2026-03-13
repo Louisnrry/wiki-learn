@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { questions } from './question';
-import '../quizz.css'; // Ton fichier CSS actuel
+import './quizz.css';
 
 const QuizRomain = ({ onBack }) => {
   // On stocke les réponses de l'utilisateur dans un objet { q1: 'auguste', q2: 'louve' }
@@ -32,14 +32,14 @@ const QuizRomain = ({ onBack }) => {
 
   return (
     <div className="quiz-wrapper">
-      <div className="flex gap-4 mb-4">
+      <div className="quiz-actions">
         {onBack && (
-          <button onClick={onBack} className="px-4 py-2 text-[#fdf5e6] bg-[#3e2723] font-serif font-bold border border-[#5d4037] rounded hover:bg-[#5d4037] transition-colors">
+          <button onClick={onBack} className="quiz-btn-nav">
             ← Retour au menu
           </button>
         )}
         {score !== null && (
-          <button onClick={handleRestart} className="px-4 py-2 text-[#fdf5e6] bg-[#3e2723] font-serif font-bold border border-[#5d4037] rounded hover:bg-[#5d4037] transition-colors">
+          <button onClick={handleRestart} className="quiz-btn-nav">
             ↻ Recommencer
           </button>
         )}
