@@ -1,4 +1,4 @@
-// Piles de livres empilés au sol
+// Piles de livres au sol
 import React from 'react';
 import './BookStacks.css';
 
