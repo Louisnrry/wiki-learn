@@ -2,9 +2,10 @@ import { useState } from "react";
 import ParcheminHeader from "./components/header/ParcheminHeader";
 import LivreConteneur from "./components/conteneur/LivreConteneur";
 import CoursContent from "./components/conteneur/CoursContent";
+import QuizRomain from "./quiz";
 
 function App() {
-  // Gestion de la navigation entre le menu et le cours
+  // Gestion de la navigation entre le menu, le cours et le quiz
   const [page, setPage] = useState("menu");
   const theme = "Rome antique";
 
@@ -29,9 +30,14 @@ function App() {
         {/* Affichage conditionnel avec les nouvelles fonctions de navigation */}
         <div className="w-full flex justify-center items-center min-h-[60vh]">
           {page === "menu" ? (
-            <LivreConteneur onOpenCours={() => setPage("cours")} />
-          ) : (
+            <LivreConteneur 
+              onOpenCours={() => setPage("cours")}
+              onOpenQuiz={() => setPage("quiz")}
+            />
+          ) : page === "cours" ? (
             <CoursContent onBack={() => setPage("menu")} />
+          ) : (
+            <QuizRomain onBack={() => setPage("menu")} />
           )}
         </div>
 
@@ -40,6 +46,7 @@ function App() {
       {/* 4. PETITS ÉLÉMENTS DÉCORATIFS (Optionnel - Particules dorées) */}
       <div className="absolute bottom-10 left-10 w-2 h-2 bg-[#c9a030] rounded-full blur-sm opacity-20"></div>
       <div className="absolute top-20 right-20 w-3 h-3 bg-[#c9a030] rounded-full blur-md opacity-10"></div>
+
     </div>
   );
 }

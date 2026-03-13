@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    width: 100%;
+    padding:20px;
+}
+input{
+    padding:10px;
+    border: 1px solid black;
+    margin:10px;
+}
+fieldset{
+    background-color: skyblue;
+    font-weight:bold;
+}
+legend{
+    box-shadow: 10px;
+    border: 1px solid grey;
+    box-shadow: 10px 5px 5px black;
+}
