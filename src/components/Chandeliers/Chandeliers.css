@@ -1,0 +1,61 @@
+/* Chandeliers.css */
+
+@keyframes bulbFlicker {
+    0%,100% { opacity: 1; }
+    40%     { opacity: 0.75; }
+    60%     { opacity: 0.9; }
+    80%     { opacity: 0.6; }
+}
+
+.chandelier {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.c-rod {
+    width: 4px;
+    height: 30px;
+    background: linear-gradient(180deg, #2a1a08 0%, #4a3018 100%);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.c-body {
+    position: relative;
+    width: 180px;
+    height: 50px;
+    background: linear-gradient(180deg, #3a2510 0%, #2a1808 100%);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.6);
+    border: 1px solid #5a3820;
+}
+
+.c-arm {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, #5a3820 0%, #3a2010 100%);
+    border-radius: 2px;
+}
+
+.c-socket {
+    position: absolute;
+    bottom: -8px;
+    width: 8px;
+    height: 10px;
+    background: #3a2010;
+    border-radius: 2px 2px 0 0;
+}
+
+.c-bulb {
+    position: absolute;
+    bottom: -22px;
+    width: 10px;
+    height: 14px;
+    background: radial-gradient(circle at 50% 30%, #fffae0 0%, #ffe8a0 50%, #d4a830 100%);
+    border-radius: 5px 5px 3px 3px;
+    box-shadow: 0 0 12px 4px rgba(255,220,100,.5), 0 0 30px 8px rgba(255,180,50,.25);
+    animation: bulbFlicker var(--bf, 2s) ease-in-out infinite;
+}

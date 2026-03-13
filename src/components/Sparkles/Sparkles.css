@@ -1,0 +1,45 @@
+/* Sparkles.css */
+
+@keyframes sparkleAnim {
+    0%,100% { transform: translate(0,0) scale(0); opacity: 0; }
+    20%     { opacity: 1; }
+    50%     { transform: translate(var(--sp-x),var(--sp-y)) scale(1); opacity: 0.9; }
+    80%     { opacity: 0.4; }
+}
+
+@keyframes dustFloat {
+    0%   { transform: translateY(0) translateX(0); opacity: var(--dop, 0.3); }
+    50%  { transform: translateY(-60px) translateX(var(--dx)); opacity: calc(var(--dop, 0.3) * 1.4); }
+    100% { transform: translateY(-120px) translateX(0); opacity: 0; }
+}
+
+#sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 11;
+}
+
+.sparkle {
+    position: absolute;
+    width: var(--sp-s, 10px);
+    height: var(--sp-s, 10px);
+    background: var(--sp-c, #ffd700);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: sparkleAnim var(--sp-d, 4s) ease-in-out var(--sp-del, 0s) infinite;
+    filter: blur(0.5px);
+}
+
+#dustParticles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 11;
+}
+
+.dust {
+    position: absolute;
+    border-radius: 50%;
+    animation: dustFloat var(--df, 7s) ease-in-out var(--dd, 0s) infinite;
+    opacity: var(--dop, 0.3);
+}
