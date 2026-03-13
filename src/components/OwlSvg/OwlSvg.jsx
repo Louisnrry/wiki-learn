@@ -5,7 +5,7 @@ import './OwlSvg.css';
 export default function OwlSvg() {
     return (
         <div className="owl-wrap">
-            <svg width="300" height="310" viewBox="0 0 300 310" xmlns="http://www.w3.org/2000/svg">
+            <svg width="300" height="350" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <radialGradient id="chairG" cx="40%" cy="30%">
                         <stop offset="0%" stopColor="#9a4520" />
@@ -30,6 +30,11 @@ export default function OwlSvg() {
                         <stop offset="0%" stopColor="#9a5530" />
                         <stop offset="60%" stopColor="#6a2e10" />
                         <stop offset="100%" stopColor="#3a1508" />
+                    </radialGradient>
+                    <radialGradient id="hatG" cx="40%" cy="30%">
+                        <stop offset="0%" stopColor="#7a553a" />
+                        <stop offset="60%" stopColor="#4a2e18" />
+                        <stop offset="100%" stopColor="#2a1508" />
                     </radialGradient>
                     <filter id="outline" x="-10%" y="-10%" width="120%" height="120%">
                         <feMorphology operator="dilate" radius="2.5" in="SourceAlpha" result="expanded" />
@@ -78,6 +83,29 @@ export default function OwlSvg() {
                     <path d="M182 100 L192 68 L172 88 Z" fill="#5a7888" />
                     <path d="M118 100 L108 68 L128 88 Z" fill="none" stroke="#1a0a00" strokeWidth="2.5" strokeLinejoin="round" />
                     <path d="M182 100 L192 68 L172 88 Z" fill="none" stroke="#1a0a00" strokeWidth="2.5" strokeLinejoin="round" />
+
+                    {/* Choixpeau magique (Sorting Hat) */}
+                    <g transform="translate(0, -30)">
+                        {/* Bord du chapeau */}
+                        <path d="M85 105 Q150 115 215 105 Q230 102 230 95 Q230 85 150 82 Q70 85 70 95 Q70 102 85 105Z" fill="url(#hatG)" filter="url(#outline)" />
+                        
+                        {/* Corps du chapeau affaissé */}
+                        <path d="M105 85 Q110 50 130 35 Q140 25 160 20 Q185 15 180 35 Q175 55 185 65 Q195 75 195 85 Q150 95 105 85Z" fill="url(#hatG)" filter="url(#outline)" />
+                        
+                        {/* Plis formants le visage (yeux et bouche) */}
+                        <g opacity=".4" stroke="#1a0a00" strokeWidth="1.5" fill="none" strokeLinecap="round">
+                            {/* Yeux (plis) */}
+                            <path d="M135 60 Q145 55 152 62" />
+                            <path d="M168 60 Q160 55 155 62" />
+                            {/* Bouche (pli large) */}
+                            <path d="M135 78 Q150 85 170 76" />
+                        </g>
+
+                        {/* Petites rustines */}
+                        <rect x="120" y="45" width="10" height="10" rx="1" fill="#5a3820" opacity=".6" transform="rotate(15 125 50)" />
+                        <path d="M120 45 L130 55 M130 45 L120 55" stroke="#3a2010" strokeWidth=".5" opacity=".4" />
+                    </g>
+
                     <ellipse cx="150" cy="130" rx="52" ry="50" fill="url(#bodyG)" />
                     <ellipse cx="150" cy="132" rx="40" ry="38" fill="rgba(200,215,225,.55)" />
                     <ellipse cx="132" cy="112" rx="16" ry="11" fill="rgba(255,255,255,.13)" transform="rotate(-20 132 112)" />
