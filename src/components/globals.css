@@ -1,0 +1,54 @@
+/* ══════════════════════════════════════════════════════════
+   globals.css — Styles de base globaux (Vite + React)
+   ══════════════════════════════════════════════════════════ */
+
+/* Réinitialisation universelle */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-gold:    #c9a84c;
+    --color-dark:    #110a04;
+    --color-text:    #e8d8b0;
+    --color-accent:  #8ecae6;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* La scène est plein-écran, pas de scroll */
+}
+
+body {
+    background: var(--color-dark);
+    color: var(--color-text);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Suppression des styles de liste par défaut */
+ul, ol {
+    list-style: none;
+}
+
+/* Liens sans décoration */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Images responsives */
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Sélection de texte */
+::selection {
+    background: rgba(201, 168, 76, 0.3);
+    color: #fff8e0;
+}
