@@ -64,7 +64,7 @@ export function GameProvider({ children }) {
 
 
 // fonction quand bonne reponse pour gagner de l'exp
-    const gereBonneReponse = () => {
+    const gererBonneReponse = () => {
         if (niveau >= 100) return;
         const nouvelXp = xp + 100; 
         if (nouvelXp >= xpNecessaire) {
@@ -91,7 +91,7 @@ export function GameProvider({ children }) {
             xp, niveau, xpNecessaire,
             themeSombre, avatarActif,
             recompensesDebloquees, nouvelleRecompense,
-            gereBonneReponse, basculerTheme, changerAvatar,
+            gererBonneReponse, basculerTheme, changerAvatar,
             estDebloque, peutUtiliserThemeSombre,
         }}>
             {children}

@@ -10,7 +10,7 @@ function BarreXp({ xp, xpNecessaire, niveau }) {
                 <span> {xp}/{xpNecessaire} XP </span> 
             </div> 
             <div className="profil__xp-barre">
-                <div className="profil__xp-remplissage" style={{ width: '${pourcentage}%'}} />
+                <div className="profil__xp-remplissage" style={{ width: `${pourcentage}%`}} />
             </div>
             <div className="profil__xp-suite">
                 Niveau {niveau +1 } dans {xpNecessaire -xp } XP
@@ -165,21 +165,21 @@ export default function ProfilPage(){
                         <div className="profil__badge-niveau">⭐ Niveau {niveau}</div>
                     </div>
                     <button
-                    className={'profil__bouton-theme ${peutUtiliserThemeSombre ? "profil__bouton-theme--actif" : "profil__bouton-theme--bloque"}'}
+                    className={`profil__bouton-theme ${peutUtiliserThemeSombre ? "profil__bouton-theme--actif" : "profil__bouton-theme--bloque"}`}
                     onClick={basculerTheme}
                     title={peutUtiliserThemeSombre ? "Basculer le thème" : "Débloqué au niveau 2"}>
                         {themeSombre ? "☀️" : "🌙"}
                         {!peutUtiliserThemeSombre && <span>Niv.2</span>}
                     </button>
                 </div>
-                <BarreXp xp={xp} xpNecessaire={xpNecessaire} niveau={niveau}/> 
+                <BarreXp xp={xp} xpNecessaire={xpNecessaire} niveau={niveau}/> 
             </div>
 
             <div className="profil__onglets">
-                <button className={'profil__onglet ${onglet === "badges" ? "profil__onglet--actif" : ""}'} onClick={() => setOnglet("badges")}>
+                <button className={`profil__onglet ${onglet === "badges" ? "profil__onglet--actif" : ""}`} onClick={() => setOnglet("badges")}>
                     🏅 Badges ({badges.filter((b) => estDebloque(b.id)).length}/{badges.length})
                 </button>
-                <button className={'profil__onglet ${onglet === "avatars" ? "profil__onglet--actif" : ""}'} onClick ={() => setOnglet("avatars")}>
+                <button className={`profil__onglet ${onglet === "avatars" ? "profil__onglet--actif" : ""}`} onClick ={() => setOnglet("avatars")}>
                     🖼️ Avatars ({avatars.filter((a) => estDebloque(a.id)).length}/{avatars.length})
                 </button>
             </div>
@@ -201,7 +201,7 @@ export default function ProfilPage(){
 
             <div className="profil__test">
                 <p>🧪 Zone de test — à supprimer avant le rendu</p>
-                <button onClick={gererBonneReponse}>+100xp (simuler une bonne reponse)</button>
+                <button onClick={gererBonneReponse}>+100 XP (simuler bonne réponse)</button>
             </div>
 
 
