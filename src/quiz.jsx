@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { questions } from './questions';
-import './quizz.css'; // Ton fichier CSS actuel
+import { questions } from './question';
+import '../quizz.css'; // Ton fichier CSS actuel
 
 const QuizRomain = () => {
   // On stocke les réponses de l'utilisateur dans un objet { q1: 'auguste', q2: 'louve' }
@@ -67,3 +67,4 @@ const QuizRomain = () => {
 };
 
 export default QuizRomain;
+
