@@ -1,4 +1,4 @@
-// Chouette SVG assise dans un fauteuil avec un livre et une pipe
+// Chouette SVG (fauteuil, livre, pipe)
 import React from 'react';
 import './OwlSvg.css';
 
