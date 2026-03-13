@@ -1,0 +1,163 @@
+/* Landing.css — styles de la scène principale */
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #110a04;
+    font-family: 'Georgia', serif;
+}
+
+.room-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, #2a1a0e 0%, #180e06 60%, #0d0702 100%),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 58px, rgba(0,0,0,.12) 58px, rgba(0,0,0,.12) 60px);
+}
+
+.ceiling {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8%;
+    background: linear-gradient(180deg, #0d0803 0%, #1a1008 100%);
+    border-bottom: 2px solid #2a1a08;
+}
+
+.floor {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 15%;
+    background:
+        repeating-linear-gradient(90deg, #1a0e06 0px, #1a0e06 59px, #150b05 59px, #150b05 60px),
+        linear-gradient(180deg, #221208 0%, #150a04 100%);
+}
+
+.rug {
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44%;
+    height: 6%;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, #6b1c1c 0%, #3a0e0e 60%, #250808 100%);
+    border-radius: 50%;
+    opacity: 0.85;
+    box-shadow: 0 4px 24px rgba(0,0,0,.5);
+}
+
+.fire-room-glow {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 50%;
+    background: radial-gradient(ellipse 60% 80% at 50% 80%, rgba(255,120,30,.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.title-crest {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.crest-text {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-family: 'Georgia', serif;
+    color: #c9a84c;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 20px rgba(201,168,76,.6), 0 0 60px rgba(201,168,76,.3), 2px 2px 0 #3a1808;
+}
+
+.crest-sub {
+    font-size: clamp(0.65rem, 1.5vw, 1rem);
+    color: #a08040;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.side-table {
+    position: absolute;
+    bottom: 14%;
+    left: 18%;
+    width: 10%;
+    z-index: 5;
+}
+
+.open-book {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, #f0e8d0 0%, #d8ccb0 100%);
+    border-radius: 2px 2px 0 0;
+    box-shadow: 2px 4px 12px rgba(0,0,0,.4);
+    position: relative;
+}
+
+.open-book::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(0,0,0,.2);
+    transform: translateX(-50%);
+}
+
+.magnifier {
+    position: absolute;
+    top: -18px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #c9a030;
+    background: rgba(142,202,230,.25);
+    box-shadow: 0 0 8px rgba(201,160,48,.4);
+}
+
+.magnifier::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -2px;
+    width: 3px;
+    height: 10px;
+    background: #c9a030;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transform-origin: top;
+}
+
+@keyframes runeGlow {
+    0%,100% { opacity: 0.18; text-shadow: 0 0 8px #c9a84c; }
+    50%     { opacity: 0.55; text-shadow: 0 0 18px #ffe066, 0 0 30px #c9a84c; }
+}
+
+.rune {
+    position: absolute;
+    font-size: 1.4rem;
+    color: #c9a84c;
+    opacity: 0.2;
+    animation: runeGlow 4s ease-in-out var(--rd, 0s) infinite;
+    user-select: none;
+    z-index: 6;
+}
+
+.vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(0,0,0,.5) 75%, rgba(0,0,0,.85) 100%);
+    pointer-events: none;
+    z-index: 20;
+}

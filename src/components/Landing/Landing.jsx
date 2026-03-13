@@ -1,16 +1,16 @@
 // Page d'accueil : assemble la scène de la bibliothèque magique (étagères, fenêtre, cheminée, chouette, etc.)
 import React, { useMemo } from 'react';
-import './landing.css';
+import './Landing.css';
 
-import OwlSvg from './OwlSvg';
-import Shelves from './Shelves';
-import Window from './Window';
-import Chandelier from './Chandeliers';
-import Fireplace from './Fireplace';
-import BookStacks from './BookStacks';
-import Candles from './Candles';
-import Sparkles from './Sparkles';
-import Snitch from './Snitch';
+import OwlSvg from '../OwlSvg/OwlSvg';
+import Shelves from '../Shelves/Shelves';
+import Window from '../Window/Window';
+import Chandelier from '../Chandeliers/Chandeliers';
+import Fireplace from '../Fireplace/Fireplace';
+import BookStacks from '../BookStacks/BookStacks';
+import Candles from '../Candles/Candles';
+import Sparkles from '../Sparkles/Sparkles';
+import Snitch from '../Snitch/Snitch';
 
 export default function Landing() {
 

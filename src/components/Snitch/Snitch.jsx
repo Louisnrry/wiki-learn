@@ -1,5 +1,6 @@
 // Vif d'Or animé qui vole à travers la pièce
 import React from 'react';
+import './Snitch.css';
 
 export default function Snitch() {
     return (

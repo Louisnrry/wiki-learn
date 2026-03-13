@@ -1,5 +1,6 @@
 // Chouette SVG assise dans un fauteuil avec un livre et une pipe
 import React from 'react';
+import './OwlSvg.css';
 
 export default function OwlSvg() {
     return (

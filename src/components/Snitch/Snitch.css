@@ -1,0 +1,47 @@
+/* Snitch.css */
+
+@keyframes snitchFly {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(60px, -30px) rotate(15deg); }
+    50%  { transform: translate(120px, 10px) rotate(-10deg); }
+    75%  { transform: translate(50px, 30px) rotate(20deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes wingFlap {
+    0%,100% { transform: scaleX(1) skewY(0deg); }
+    50%     { transform: scaleX(0.5) skewY(15deg); }
+}
+
+.snitch {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    z-index: 15;
+    animation: snitchFly 10s ease-in-out infinite;
+}
+
+.snitch-ball {
+    position: absolute;
+    top: 0; left: 0;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 35% 35%, #ffe066 0%, #d4a020 50%, #a07010 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px rgba(255,200,50,.7), 0 0 25px 6px rgba(200,150,20,.4);
+    z-index: 1;
+}
+
+.snitch-wing {
+    position: absolute;
+    top: 3px;
+    width: 18px;
+    height: 10px;
+    background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.7) 0%, rgba(200,230,255,.4) 100%);
+    border-radius: 50%;
+    border: 1px solid rgba(200,220,255,.5);
+    animation: wingFlap 0.2s ease-in-out infinite;
+}
+
+.snitch-wing.left  { right: 12px; transform-origin: right center; }
+.snitch-wing.right { left: 12px; transform-origin: left center; }

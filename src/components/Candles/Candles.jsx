@@ -1,5 +1,6 @@
 // Bougies flottantes avec flamme, mèche et goutte de cire
 import React from 'react';
+import './Candles.css';
 
 export default function Candles({ candles }) {
     return (

@@ -1,0 +1,16 @@
+/* OwlSvg.css */
+
+@keyframes owlBob {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-6px); }
+}
+
+.owl-wrap {
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
+    animation: owlBob 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,.6));
+}

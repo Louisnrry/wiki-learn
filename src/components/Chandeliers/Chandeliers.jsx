@@ -1,5 +1,6 @@
 // Lustre suspendu au plafond avec 5 ampoules clignotantes
 import React from 'react';
+import './Chandeliers.css';
 
 const chandPositions = [8, 38, 88, 138, 170];
 

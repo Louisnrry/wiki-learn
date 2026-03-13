@@ -1,5 +1,6 @@
 // Éclats de lumière magiques et particules de poussière flottantes
 import React from 'react';
+import './Sparkles.css';
 
 export default function Sparkles({ sparkles, dusts }) {
     return (

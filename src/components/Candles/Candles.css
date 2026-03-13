@@ -1,0 +1,88 @@
+/* Candles.css */
+
+@keyframes flicker {
+    0%,100% { opacity: 1; transform: scaleY(1) scaleX(1); }
+    20%     { opacity: 0.9; transform: scaleY(1.05) scaleX(0.95); }
+    50%     { opacity: 0.95; transform: scaleY(0.95) scaleX(1.05); }
+    70%     { opacity: 1; transform: scaleY(1.08) scaleX(0.97); }
+}
+
+@keyframes candleFloat {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50%     { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes candleDrift {
+    0%,100% { transform: translateX(0); }
+    50%     { transform: translateX(var(--dm, 6px)); }
+}
+
+#candles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 12;
+}
+
+.candle-float {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation:
+        candleFloat var(--cf, 4s) ease-in-out infinite,
+        candleDrift var(--cd, 8s) ease-in-out infinite;
+}
+
+.candle-glow {
+    position: absolute;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,200,80,.35) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.candle-flame {
+    width: 8px;
+    height: 16px;
+    background: radial-gradient(circle at 50% 70%, #fff8e0 0%, #ffcc44 40%, #ff8800 80%, transparent 100%);
+    border-radius: 50% 50% 40% 40%;
+    animation: flicker 0.8s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.candle-wick {
+    width: 2px;
+    height: 6px;
+    background: #2a1808;
+    border-radius: 1px;
+}
+
+.candle-body {
+    width: 10px;
+    background: linear-gradient(180deg, #f0ece0 0%, #d8d4c8 50%, #c0bca8 100%);
+    border-radius: 2px;
+    position: relative;
+    box-shadow: inset -2px 0 4px rgba(0,0,0,.15);
+}
+
+.wax-trail {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 4px;
+    height: var(--wh, 8px);
+    background: linear-gradient(180deg, rgba(240,236,224,.9) 0%, rgba(215,208,192,.6) 100%);
+    border-radius: 0 0 3px 3px;
+}
+
+.candle-drip {
+    width: 6px;
+    height: 8px;
+    background: linear-gradient(180deg, #e8e4d8 0%, #d0ccbc 100%);
+    border-radius: 0 0 50% 50%;
+    margin-top: -1px;
+}
