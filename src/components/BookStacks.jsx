@@ -1,3 +1,4 @@
+// Piles de livres empilés au sol
 import React from 'react';
 
 export default function BookStacks({ leftStack, midStack }) {

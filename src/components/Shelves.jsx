@@ -1,3 +1,4 @@
+// Étagères gauche et droite remplies de livres colorés
 import React from 'react';
 
 export default function Shelves({ leftShelf, rightShelf }) {

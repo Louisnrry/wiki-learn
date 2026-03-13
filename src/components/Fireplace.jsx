@@ -1,3 +1,4 @@
+// Cheminée avec flammes animées, étincelles et globe décoratif
 import React from 'react';
 
 export default function Fireplace() {

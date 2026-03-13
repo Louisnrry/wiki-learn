@@ -1,3 +1,4 @@
+// Classement des joueurs trié par niveau et XP
 import React, { useState } from 'react';
 
 function Classement() {

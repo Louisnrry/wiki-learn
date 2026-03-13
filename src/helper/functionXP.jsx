@@ -1,3 +1,4 @@
+// Système de points d'expérience et de niveaux du joueur
 import { useState } from 'react';
 
 export default function SystemeXP() {

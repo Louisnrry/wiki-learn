@@ -1,3 +1,4 @@
+// Fenêtre avec vue nocturne : ciel étoilé, lune et silhouettes d'arbres
 import React from 'react';
 
 export default function Window({ stars, trees }) {

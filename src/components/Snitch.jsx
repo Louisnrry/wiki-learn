@@ -1,3 +1,4 @@
+// Vif d'Or animé qui vole à travers la pièce
 import React from 'react';
 
 export default function Snitch() {

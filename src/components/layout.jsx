@@ -1,3 +1,4 @@
+// Layout racine de l'application
 import React from "react";
 
 export default function RootLayout({ children }) {

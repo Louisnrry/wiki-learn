@@ -1,3 +1,4 @@
+// Lustre suspendu au plafond avec 5 ampoules clignotantes
 import React from 'react';
 
 const chandPositions = [8, 38, 88, 138, 170];
