@@ -29,4 +29,13 @@ Pour ce MVP, nous avons privilégié la rapidité et la fluidité :
 * **Stylisation :** CSS pur avec méthodologie **BEM** (Block Element Modifier).
 * **Déploiement :** [Netlify](https://www.netlify.com/).
 
+--
+## Fonctionalité non implémenté 
+* **Rajouter des éléments pop culture**
+* **Search bar pour les thèmes**
+* **Page pour chaque thème avec API Wikipedia**
+* **Création d'un pseudos relié à un compte google**
+* **Changer la couleur et la font du pseudo**
+
+
 
