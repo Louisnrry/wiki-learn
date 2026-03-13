@@ -8,7 +8,7 @@ Projet réalisé dans le cadre du **Coding Sprint de 48h** à l'école **HETIC**
 
 ## 🚀 Déploiement
 Le projet est hébergé et accessible en direct ici :  
-👉 **[INSERE TON LIEN NETLIFY ICI]**
+👉 **https://wiki-learn.netlify.app/**
 
 ---
 
