@@ -34,3 +34,23 @@
   max-width: 680px;
   margin: 0 auto;
 }
+
+/* Bouton retour */
+.profil__btn-retour {
+  padding: 0.5rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--bordure);
+  background: none;
+  color: var(--texte-2);
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.profil__btn-retour:hover {
+  color: var(--texte);
+  border-color: var(--texte);
+}

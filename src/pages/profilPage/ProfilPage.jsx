@@ -9,7 +9,7 @@ import GrilleRecompenses from "../../components/componentsProfilPage/GrilleRecom
 // Import du CSS de la page (variables + layout uniquement)
 import "./ProfilPage.css";
 
-export default function ProfilPage() {
+export default function ProfilPage({ onBack }) {
   const {
     xp, niveau, xpNecessaire,
     themeSombre, avatarActif,
@@ -25,6 +25,11 @@ export default function ProfilPage() {
   return (
     <div className="profil">
       <div className="profil__inner">
+        {onBack && (
+          <button onClick={onBack} className="profil__btn-retour">
+            ← Retour au menu
+          </button>
+        )}
         <ProfilHeader
           avatarActif={avatarActif}
           niveau={niveau}

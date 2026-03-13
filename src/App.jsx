@@ -1,9 +1,11 @@
 import { useState } from "react";
-import Landing from './components/Landing/Landing';
+import Landing from './pages/Landing/Landing';
 import ParcheminHeader from "./components/header/ParcheminHeader";
 import LivreConteneur from "./components/conteneur/LivreConteneur";
 import CoursContent from "./components/conteneur/CoursContent";
 import QuizRomain from "./quiz";
+import ProfilPage from "./pages/profilPage/ProfilPage";
+import RewardNotification from "./components/RewardNotification";
 import "./App.css";
 
 export default function App() {
@@ -38,12 +40,15 @@ export default function App() {
             <LivreConteneur
               onOpenCours={() => setView("cours")}
               onOpenQuiz={() => setView("quiz")}
+              onOpenProfil={() => setView("profil")}
             />
           ) : view === "cours" ? (
             <CoursContent onBack={() => setView("menu")} />
-          ) : (
+          ) : view === "quiz" ? (
             <QuizRomain onBack={() => setView("menu")} />
-          )}
+          ) : view === "profil" ? (
+            <ProfilPage onBack={() => setView("menu")} />
+          ) : null}
         </div>
 
         {/* Bouton retour vers la bibliothèque */}
@@ -57,6 +62,9 @@ export default function App() {
         )}
 
       </main>
+
+      {/* Notification de récompense (visible partout sauf landing) */}
+      <RewardNotification />
 
       {/* 4. PETITS ÉLÉMENTS DÉCORATIFS */}
       <div className="app-rome__dot app-rome__dot--bottom"></div>

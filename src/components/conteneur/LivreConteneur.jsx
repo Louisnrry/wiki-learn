@@ -1,7 +1,7 @@
 import LivreButton from "../buton/LivreButton";
 import "./LivreConteneur.css";
 
-export default function LivreConteneur({ onOpenCours, onOpenQuiz }) {
+export default function LivreConteneur({ onOpenCours, onOpenQuiz, onOpenProfil }) {
   return (
     <div className="livre">
 
@@ -19,6 +19,11 @@ export default function LivreConteneur({ onOpenCours, onOpenQuiz }) {
         <h2 className="livre__titre">BIBLIOTHÈQUE</h2>
         <p className="livre__description">"Consultez les archives pour préparer le défi."</p>
         <LivreButton variant="primary" onClick={onOpenCours}>LIRE LA LEÇON</LivreButton>
+
+        {/* Bouton Profil */}
+        <div style={{ marginTop: '1.5rem' }}>
+          <LivreButton variant="primary" onClick={onOpenProfil}>MON PROFIL</LivreButton>
+        </div>
       </div>
 
       {/* Reliure centrale */}

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { questions } from './question';
+import { useGame } from './context/GameContext';
 import './quizz.css';
 
 const QuizRomain = ({ onBack }) => {
   // On stocke les réponses de l'utilisateur dans un objet { q1: 'auguste', q2: 'louve' }
   const [answers, setAnswers] = useState({});
   const [score, setScore] = useState(null);
+  const { gererBonneReponse } = useGame();
 
   const handleChange = (questionId, value) => {
     setAnswers({ ...answers, [questionId]: value });
@@ -18,6 +20,7 @@ const QuizRomain = ({ onBack }) => {
     questions.forEach((q) => {
       if (answers[q.id] === q.correctAnswer) {
         tempScore++;
+        gererBonneReponse(); // +XP pour chaque bonne réponse
       }
     });
     
