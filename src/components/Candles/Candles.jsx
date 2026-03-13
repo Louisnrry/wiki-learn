@@ -1,4 +1,4 @@
-// Bougies flottantes avec flamme, mèche et goutte de cire
+// Bougies : flammes et cire
 import React from 'react';
 import './Candles.css';
 
