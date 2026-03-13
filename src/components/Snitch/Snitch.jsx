@@ -1,4 +1,4 @@
-// Vif d'Or animé qui vole à travers la pièce
+// Vif d'Or qui vole
 import React from 'react';
 import './Snitch.css';
 

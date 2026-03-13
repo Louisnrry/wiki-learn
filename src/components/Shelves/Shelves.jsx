@@ -1,4 +1,4 @@
-// Étagères gauche et droite remplies de livres colorés
+// Étagères avec livres colorés
 import React from 'react';
 import './Shelves.css';
 

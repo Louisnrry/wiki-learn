@@ -1,4 +1,4 @@
-// Composant racine qui charge la page d'accueil
+// Root component charger Landing
 import Landing from './components/Landing/Landing';
 
 export default function App() {

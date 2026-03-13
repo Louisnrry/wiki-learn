@@ -1,4 +1,4 @@
-// Page d'accueil : assemble la scène de la bibliothèque magique (étagères, fenêtre, cheminée, chouette, etc.)
+// Landing : bibliothèque magique (étagères, fenêtre, chouette, etc.)
 import React, { useMemo } from 'react';
 import './Landing.css';
 

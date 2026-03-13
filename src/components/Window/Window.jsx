@@ -1,4 +1,4 @@
-// Fenêtre avec vue nocturne : ciel étoilé, lune et silhouettes d'arbres
+// Fenêtre : ciel étoilé, lune et arbres
 import React from 'react';
 import './Window.css';
 

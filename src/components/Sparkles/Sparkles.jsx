@@ -1,4 +1,4 @@
-// Éclats de lumière magiques et particules de poussière flottantes
+// Sparkles et poussière magique
 import React from 'react';
 import './Sparkles.css';
 
