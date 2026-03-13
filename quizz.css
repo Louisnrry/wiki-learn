@@ -1,0 +1,44 @@
+:root{
+
+    --primary-background-color: #f4e4bc;
+    --text-color: #b8860b;
+}
+body {
+    background-color: var(--primary-background-color);
+    font-family: 'Georgia', serif;
+    color: var(--text-color);
+    background: url(fond.jpg);
+    
+}
+fieldset {
+    border: 2px solid #b8860b; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.2rem; 
+}
+
+button {
+    background-color: #800000;
+    color: gold;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #b8860b;
+    color: white;
+}
+.container-validation{
+    margin-top:20px;
+    text-align: center;
+}
