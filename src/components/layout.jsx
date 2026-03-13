@@ -1,0 +1,12 @@
+// Layout racine de l'application
+import React from "react";
+
+export default function RootLayout({ children }) {
+    return (
+        <html lang="fr">
+            <body>
+                {children}
+            </body>
+        </html>
+    );
+}
