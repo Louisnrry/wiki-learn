@@ -1,4 +1,4 @@
-// Point d'entrée de l'application React
+// Entry point de l'app
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './components/globals.css'
