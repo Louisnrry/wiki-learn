@@ -1,23 +1,24 @@
-// Classement joueurs
-import React, { useState } from 'react';
+// functionRanking.jsx — mis à jour pour utiliser le GameContext
+// Les states xp/niveau viennent maintenant de GameContext.jsx
 
-function Classement() {
-  const [niveau, setNiveau] = useState(2);
-  const [xp, setXp] = useState(200);
+import { useGame } from "../context/GameContext";
 
+export default function Classement() {
+  // On récupère xp et niveau depuis le contexte (plus de useState local)
+  const { xp, niveau, estDebloque } = useGame();
+
+  // Les faux joueurs (inchangés)
   const fauxJoueurs = [
-    { pseudo: "Marie_Curie", niveau: 2, xp: 150 },
-    { pseudo: "Albert_E", niveau: 5, xp: 800 },
-    { pseudo: "Ada_Lovelace", niveau: 2, xp: 900 }
+    { pseudo: "Marie_Curie",  niveau: 2, xp: 150 },
+    { pseudo: "Albert_E",     niveau: 5, xp: 800 },
+    { pseudo: "Ada_Lovelace", niveau: 2, xp: 900 },
   ];
 
   const monJoueur = { pseudo: "Toi", niveau: niveau, xp: xp };
   const tousLesJoueurs = [...fauxJoueurs, monJoueur];
 
-  const classementTrie = tousLesJoueurs.sort((joueurA, joueurB) => {
-    if (joueurB.niveau !== joueurA.niveau) {
-      return joueurB.niveau - joueurA.niveau;
-    }
+  const classementTrie = [...tousLesJoueurs].sort((joueurA, joueurB) => {
+    if (joueurB.niveau !== joueurA.niveau) return joueurB.niveau - joueurA.niveau;
     return joueurB.xp - joueurA.xp;
   });
 
@@ -27,12 +28,13 @@ function Classement() {
       <ol className="classement__liste">
         {classementTrie.map((joueur, index) => (
           <li key={index} className="classement__joueur">
-            <strong>{joueur.pseudo}</strong> - Niveau {joueur.niveau} ({joueur.xp} XP)
+            {/* On affiche le badge "Encyclopédiste" si "Toi" l'a débloqué */}
+            <strong>{joueur.pseudo}</strong>
+            {joueur.pseudo === "Toi" && estDebloque("badge_encyclopediste") && " 🏆"}
+            {" "}- Niveau {joueur.niveau} ({joueur.xp} XP)
           </li>
         ))}
       </ol>
     </div>
   );
 }
-
-export default Classement;
