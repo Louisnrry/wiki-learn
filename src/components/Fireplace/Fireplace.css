@@ -1,5 +1,6 @@
 /* Fireplace.css */
 
+/* Animation de la danse des flammes (mouvement de gauche à droite) */
 @keyframes flameDance {
     0%,100% { transform: skewX(0deg) scaleY(1); }
     25%     { transform: skewX(4deg) scaleY(1.06); }
@@ -7,16 +8,19 @@
     75%     { transform: skewX(2deg) scaleY(1.04); }
 }
 
+/* Animation de l'ascension des étincelles */
 @keyframes sparkRise {
     0%   { transform: translate(0,0) scale(1); opacity: 1; }
     100% { transform: translate(var(--sx),-80px) scale(0); opacity: 0; }
 }
 
+/* Animation de rotation du globe décoratif */
 @keyframes globeSpin {
     from { transform: rotateY(0deg); }
     to   { transform: rotateY(360deg); }
 }
 
+/* Zone de la cheminée : positionnement au centre-bas */
 .fireplace-area {
     position: absolute;
     bottom: 14%;
@@ -26,8 +30,10 @@
     z-index: 5;
 }
 
+/* Structure de l'encadrement du manteau de cheminée */
 .mantle-surround { position: relative; width: 100%; }
 
+/* Partie supérieure du manteau (pierre sombre) */
 .mantle-top {
     width: 100%;
     height: 12px;
@@ -36,6 +42,7 @@
     box-shadow: 0 -2px 8px rgba(0,0,0,.4);
 }
 
+/* Étagère du manteau (planche de bois) */
 .mantle-shelf {
     width: 110%;
     margin-left: -5%;
@@ -45,6 +52,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,.5);
 }
 
+/* Arche de l'âtre : cavité sombre où brûle le feu */
 .fire-arch {
     position: relative;
     width: 80%;
@@ -56,6 +64,7 @@
     box-shadow: inset 0 0 20px rgba(255,80,0,.15);
 }
 
+/* Conteneur des flammes : alignement en bas */
 .flames {
     position: absolute;
     bottom: 0;
@@ -69,18 +78,21 @@
     gap: 2px;
 }
 
+/* Styles de base pour une flamme individuelle */
 .flame {
     border-radius: 50% 50% 20% 20%;
     transform-origin: bottom center;
     animation: flameDance 1.2s ease-in-out infinite;
 }
 
+/* Différentes tailles et couleurs de flammes pour un effet réaliste */
 .f1 { width: 18px; height: 50px; background: radial-gradient(circle at 50% 80%, #ff8c00 0%, #ff4500 60%, #cc1800 100%); animation-duration: 1.1s; }
 .f2 { width: 22px; height: 62px; background: radial-gradient(circle at 50% 80%, #ffb300 0%, #ff6600 60%, #dd2200 100%); animation-duration: 0.95s; animation-delay: .15s; }
 .f3 { width: 26px; height: 72px; background: radial-gradient(circle at 50% 80%, #ffcc00 0%, #ff8800 60%, #ee3300 100%); animation-duration: 1.3s; animation-delay: .05s; }
 .f4 { width: 22px; height: 60px; background: radial-gradient(circle at 50% 80%, #ffb300 0%, #ff6600 60%, #dd2200 100%); animation-duration: 1s; animation-delay: .25s; }
 .f5 { width: 16px; height: 44px; background: radial-gradient(circle at 50% 80%, #ff8c00 0%, #ff4500 60%, #cc1800 100%); animation-duration: 1.18s; animation-delay: .35s; }
 
+/* Étincelles volantes s'échappant du feu */
 .spark {
     position: absolute;
     bottom: 20%;
@@ -92,6 +104,7 @@
     animation: sparkRise var(--sd, 1s) ease-out var(--delay, 0s) infinite;
 }
 
+/* Conteneur du globe décoratif sur le manteau */
 .globe-wrap {
     position: absolute;
     top: -60px;
@@ -102,6 +115,7 @@
     animation: globeSpin 8s linear infinite;
 }
 
+/* Anneaux orbitaux du globe */
 .globe-ring {
     position: absolute;
     inset: 0;
@@ -109,10 +123,12 @@
     border: 2px solid rgba(201,168,76,.6);
 }
 
+/* Orientations des anneaux pour l'effet 3D */
 .gr1 { transform: rotateX(0deg); }
 .gr2 { transform: rotateX(60deg); }
 .gr3 { transform: rotateX(120deg); }
 
+/* Sphère centrale du globe (planète) */
 .globe-center {
     position: absolute;
     inset: 8px;
