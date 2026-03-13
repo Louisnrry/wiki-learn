@@ -1,10 +1,12 @@
 /* OwlSvg.css */
 
+/* Animation de balancement doux de la chouette (haut/bas) */
 @keyframes owlBob {
     0%,100% { transform: translateY(0); }
     50%     { transform: translateY(-6px); }
 }
 
+/* Conteneur de la chouette SVG : positionnement sur le sol avec ombre */
 .owl-wrap {
     position: absolute;
     bottom: 14%;
