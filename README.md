@@ -39,6 +39,7 @@ Pour ce MVP, nous avons privilégié la rapidité et la fluidité :
 * **Page pour chaque thème avec API Wikipedia**
 * **Création d'un pseudos relié à un compte google**
 * **Changer la couleur et la font du pseudo**
+* r'ajout de photo de profile changeable 
 
 
 
