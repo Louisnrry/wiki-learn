@@ -4,7 +4,7 @@
 Projet réalisé dans le cadre du **Coding Sprint de 48h** à l'éco,e **HETIC**.  
 **Date de rendu :** Vendredi 13 Mars, 17h. 
 1ER JOURS, MERCREDI 11 MARS : Maquettage conception du design du projet et classification de nos idée de la plus importante a la moin importante (9H 17H) 
-2EME JOURS, JEUDI 12 MARS : Nous nou ssommes retrouvez tous ensemble pour poffiner et avancer correctement sur le projet (12H 18H)
+2EME JOURS, JEUDI 12 MARS : Nous nou sommes retrouvez tous ensemble pour pauffiner et avancer correctement sur le projet (12H 18H)
 3EME JOURS, VENDREDI 13 MARS: Jours final, rangement de chaque composant dans un dossier et fichiers qui leur sont propre pour la clarté du dossier et une meilleurs comprehension, et mise en liens de chaque branche du groupe pour la tester dans la branche test/, et rendu final à 16H dans levlien netlify 
 
 ---
