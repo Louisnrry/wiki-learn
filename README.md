@@ -1,7 +1,7 @@
 # 🎓 Wikipedia Learn - MVP
 > Transformer la curiosité en savoir structuré et gamifié.
 
-Projet réalisé dans le cadre du **Coding Sprint de 48h** à l'éco,e **HETIC**.  
+Projet réalisé dans le cadre du **Coding Sprint de 48h** à l'école **HETIC**.  
 **Date de rendu :** Vendredi 13 Mars, 17h. 
 1ER JOURS, MERCREDI 11 MARS : Maquettage conception du design du projet et classification de nos idée de la plus importante a la moin importante (9H 17H) 
 2EME JOURS, JEUDI 12 MARS : Nous nou sommes retrouvez tous ensemble pour pauffiner et avancer correctement sur le projet (12H 18H)
